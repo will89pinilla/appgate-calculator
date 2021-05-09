@@ -1,9 +1,14 @@
 package com.appgate.calculator.dto;
 
+import lombok.Builder;
 import lombok.Getter;
+import javax.validation.constraints.NotNull;
 
 @Getter
-public class Operand {
-    private Long id;
-    private double operand;
+@Builder
+public class Operand implements Dto {
+    @NotNull(message = "Id cannot be null")
+    private final Long id;
+    @NotNull(message = "Operand cannot be null")
+    private final double operand;
 }

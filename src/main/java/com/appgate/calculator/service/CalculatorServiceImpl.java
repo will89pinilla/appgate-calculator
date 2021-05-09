@@ -35,7 +35,7 @@ public class CalculatorServiceImpl implements CalculatorService {
         return environmentRepository.save(EnvironmentEntity.builder().curTotal(0L).build()).getId();
     }
 
-    EnvironmentEntity getEnvById(Long id){
+    private EnvironmentEntity getEnvById(Long id){
         return environmentRepository.findById(id)
                 .orElseThrow(() -> {
                     log.error("It could not find the id: {}", id);
@@ -43,7 +43,7 @@ public class CalculatorServiceImpl implements CalculatorService {
                 });
     }
 
-    List<OperandEntity> getOperandEntities(EnvironmentEntity env) {
+    private List<OperandEntity> getOperandEntities(EnvironmentEntity env) {
         List<OperandEntity> operandsByIsAppliedDisable = operandRepository.findByOperandsByIsAppliedDisable(env.getId());
 
         if(operandsByIsAppliedDisable.isEmpty()){
