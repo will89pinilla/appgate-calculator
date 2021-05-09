@@ -3,7 +3,6 @@ package com.appgate.calculator.domain;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.CascadeType;
@@ -15,7 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@RequiredArgsConstructor
 @Getter
 @ToString
 @EqualsAndHashCode
@@ -32,23 +30,28 @@ public class OperandEntity {
     @Column(name = "NUMBER")
     private final Long number;
 
-    @Column(name = "IS_APPLIED", columnDefinition = "boolean default false")
-    private boolean isApplied;
+    @Column(name = "IS_APPLIED", columnDefinition = "integer default 0")
+    private final int isApplied;
+
+    @Column(name = "OPERATION")
+    private final String operation;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ENV_ID")
-    private final EnviromentEntity env;
+    private final EnvironmentEntity env;
 
     public OperandEntity() {
         id = null;
         number = null;
         env = null;
-        isApplied = false;
+        isApplied = 0;
+        operation = null;
     }
-    public OperandEntity(Long id, Long number, boolean isApplied, EnviromentEntity env) {
+    public OperandEntity(Long id, Long number, int isApplied, String operation, EnvironmentEntity env) {
         this.id = id;
         this.number = number;
         this.isApplied = isApplied;
         this.env = env;
+        this.operation = operation;
     }
 }

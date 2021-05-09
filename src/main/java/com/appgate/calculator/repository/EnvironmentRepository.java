@@ -1,9 +1,8 @@
 package com.appgate.calculator.repository;
 
-import com.appgate.calculator.domain.EnviromentEntity;
+import com.appgate.calculator.domain.EnvironmentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EnvironmentRepository extends JpaRepository<EnviromentEntity, Long> {
-}
+public interface EnvironmentRepository extends JpaRepository<EnvironmentEntity, Long> {}
 
 

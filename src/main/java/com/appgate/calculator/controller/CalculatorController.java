@@ -30,7 +30,7 @@ public class CalculatorController {
         return ResponseEntity.ok(calculatorService.addOperand(operand));
     }
 
-    @PostMapping
+    @PostMapping("/operate")
     ResponseEntity<Long> operate(final @RequestBody ArithmeticOperation arithmeticOperation) {
         return ResponseEntity.ok(calculatorService.operate(arithmeticOperation));
     }
