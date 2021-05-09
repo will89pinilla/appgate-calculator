@@ -1,7 +1,5 @@
 FROM adoptopenjdk/openjdk11 as build
 
-#RUN addgroup -S spring && adduser -S spring -G spring
-#USER spring:spring
 WORKDIR /workspace/app
 
 COPY gradlew .
@@ -10,14 +8,14 @@ COPY build.gradle .
 COPY settings.gradle .
 COPY gradle gradle/
 COPY src src/
-RUN ls -la .
 
-RUN ./gradlew clean build
+RUN ./gradlew clean build -x test
 RUN mkdir -p build/dependency && (cd build/dependency; jar -xf ../libs/*.jar)
 
 FROM adoptopenjdk/openjdk11
 VOLUME /tmp
 ARG DEPENDENCY=/workspace/app/build/dependency
+RUN mkdir -p ${DEPENDENCY}
 COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
