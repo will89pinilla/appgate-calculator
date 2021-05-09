@@ -29,9 +29,5 @@ public class CalculatorExceptionHandler {
     @ResponseBody
     @ExceptionHandler(ValidationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    String badRequestHandler(ValidationException ex) {
-
-        System.out.println("Entro");
-        return ex.getMessage();
-    }
+    String badRequestHandler(ValidationException ex) { return ex.getMessage();  }
 }

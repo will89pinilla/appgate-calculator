@@ -57,14 +57,15 @@ class CalculatorServiceImplTest {
     @Test
     public void addOperand() {
         //GIVEN
+        Double aDouble = 5.0;
         EnvironmentEntity env = EnvironmentEntity.builder().id(1L).curTotal(0).build();
-        OperandEntity operandEntity = OperandEntity.builder().env(env).number(5L).build();
+        OperandEntity operandEntity = OperandEntity.builder().env(env).number(aDouble).build();
 
         given(environmentRepository.findById(any(Long.class))).willReturn(Optional.of(env));
         given(operandRepository.save(any(OperandEntity.class))).willReturn(operandEntity);
 
         //WHEN
-        String response = calculatorService.addOperand(Operand.builder().id(1L).operand(5L).build());
+        String response = calculatorService.addOperand(Operand.builder().id(1L).operand(aDouble).build());
 
         //THEN
         assertEquals(response, "OK");

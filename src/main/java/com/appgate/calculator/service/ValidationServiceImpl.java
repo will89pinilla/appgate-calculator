@@ -1,10 +1,11 @@
 package com.appgate.calculator.service;
 
 import com.appgate.calculator.dto.Dto;
+import com.appgate.calculator.exception.ValidationException;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
-import javax.validation.ValidationException;
+
 import javax.validation.Validator;
 import java.util.Set;
 
