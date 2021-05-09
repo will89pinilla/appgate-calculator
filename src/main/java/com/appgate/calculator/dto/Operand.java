@@ -5,5 +5,5 @@ import lombok.Getter;
 @Getter
 public class Operand {
     private Long id;
-    private Long operand;
+    private double operand;
 }

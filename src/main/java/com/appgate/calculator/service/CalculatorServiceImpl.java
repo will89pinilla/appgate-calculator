@@ -78,7 +78,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
 
     @Override
-    public Long operate(ArithmeticOperation operation) {
+    public Double operate(ArithmeticOperation operation) {
 
         EnvironmentEntity env = getEnvById(operation.getId());
         List<OperandEntity> isAppliedDisable = getOperandEntities(env);

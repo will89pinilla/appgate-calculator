@@ -9,41 +9,34 @@ import java.util.function.BinaryOperator;
 @Service
 public class ExecutorService {
 
-    BinaryOperator<Long> biSub = (x,y) -> x - y;
-    BinaryOperator<Long> biDiv = (x,y) -> x / y;
-    BinaryOperator<Long> biMul = (x,y) -> x * y;
-    BinaryOperator<Long> biPow = (x,y) -> x ^ y;
+    BinaryOperator<Double> biSub = (x,y) -> x - y;
+    BinaryOperator<Double> biDiv = (x,y) -> x / y;
+    BinaryOperator<Double> biMul = (x,y) -> x * y;
 
-    protected Long applyBinaryOperation(EnvironmentEntity env,
-                                        BinaryOperator<Long> binaryOperator ) {
+    protected Double applyBinaryOperation(EnvironmentEntity env,
+                                        BinaryOperator<Double> binaryOperator ) {
         return env.getOperandEntities().stream()
                 .map(OperandEntity::getNumber)
                 .reduce(env.getCurTotal(), binaryOperator);
     }
 
-    protected Long multiplication(EnvironmentEntity env){
+    protected Double multiplication(EnvironmentEntity env){
         return applyBinaryOperation(env, biMul);
     }
 
-    protected Long subtraction(EnvironmentEntity env){
-        return applyBinaryOperation(env, biSub);
-    }
+    protected Double subtraction(EnvironmentEntity env) { return applyBinaryOperation(env, biSub); }
 
-    protected Long empowerment(EnvironmentEntity env){
-        return applyBinaryOperation(env, biPow);
-    }
+    protected Double empowerment(EnvironmentEntity env) { return applyBinaryOperation(env, Math::pow); }
 
-    protected Long division(EnvironmentEntity env){
+    protected Double division(EnvironmentEntity env){
         return applyBinaryOperation(env, biDiv);
     }
 
-    protected Long addition(EnvironmentEntity env){ return applyBinaryOperation(env, Long::sum); }
+    protected Double addition(EnvironmentEntity env){ return applyBinaryOperation(env, Double::sum); }
 
-    protected Long noValid(EnvironmentEntity env){
-        return -1L;
-    }
+    protected Double noValid(EnvironmentEntity env){ return (double) -1; }
 
-    public Long execute(Executor.Type type, EnvironmentEntity env){
+    public Double execute(Executor.Type type, EnvironmentEntity env){
         return type.calculation.apply(this, env);
     }
 }

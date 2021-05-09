@@ -15,9 +15,9 @@ public final class Executor {
         POW(ExecutorService::empowerment),
         NO_VALID(ExecutorService::noValid);
 
-        public final BiFunction<ExecutorService, EnvironmentEntity, Long> calculation;
+        public final BiFunction<ExecutorService, EnvironmentEntity, Double> calculation;
 
-        Type(BiFunction<ExecutorService, EnvironmentEntity, Long> calculation) {
+        Type(BiFunction<ExecutorService, EnvironmentEntity, Double> calculation) {
             this.calculation = calculation;
         }
     }

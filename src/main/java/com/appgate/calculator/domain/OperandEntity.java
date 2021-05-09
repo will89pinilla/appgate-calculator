@@ -28,7 +28,7 @@ public class OperandEntity {
     private final Long id;
 
     @Column(name = "NUMBER")
-    private final Long number;
+    private final double number;
 
     @Column(name = "IS_APPLIED", columnDefinition = "integer default 0")
     private final int isApplied;
@@ -42,12 +42,12 @@ public class OperandEntity {
 
     public OperandEntity() {
         id = null;
-        number = null;
+        number = 0L;
         env = null;
         isApplied = 0;
         operation = null;
     }
-    public OperandEntity(Long id, Long number, int isApplied, String operation, EnvironmentEntity env) {
+    public OperandEntity(Long id, double number, int isApplied, String operation, EnvironmentEntity env) {
         this.id = id;
         this.number = number;
         this.isApplied = isApplied;

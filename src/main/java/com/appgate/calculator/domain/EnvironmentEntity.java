@@ -32,7 +32,7 @@ public class EnvironmentEntity {
     private final Long id;
 
     @Column(name = "CUR_TOTAL")
-    private final Long curTotal;
+    private final double curTotal;
 
     @OneToMany(mappedBy="env", cascade = CascadeType.ALL)
     private List<OperandEntity> operandEntities;
@@ -43,7 +43,7 @@ public class EnvironmentEntity {
         this.curTotal = 0L;
     }
 
-    public EnvironmentEntity(Long id, Long curTotal, List<OperandEntity> operandEntities) {
+    public EnvironmentEntity(Long id, double curTotal, List<OperandEntity> operandEntities) {
         this.id = id;
         this.curTotal = curTotal;
         this.operandEntities = operandEntities;

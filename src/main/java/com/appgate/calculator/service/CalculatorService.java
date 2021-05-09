@@ -6,5 +6,5 @@ import com.appgate.calculator.dto.Operand;
 public interface CalculatorService {
     Long newEnvId();
     String addOperand(Operand operand);
-    Long operate(ArithmeticOperation operation);
+    Double operate(ArithmeticOperation operation);
 }
