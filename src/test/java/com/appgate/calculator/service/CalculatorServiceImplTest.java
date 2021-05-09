@@ -32,7 +32,7 @@ class CalculatorServiceImplTest {
 
     private final static String ERROR_MESSAGE = "Could not find the env 1";
     private static final String OK = "OK";
-    public static final String MESSAGE_NOT_FOUND_OPERANDS = "Could not find operands to be applied on the env 1";
+    private static final String MESSAGE_NOT_FOUND_OPERANDS = "Could not find operands to be applied on the env 1";
 
 
     @Mock
