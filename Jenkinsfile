@@ -12,6 +12,15 @@ pipeline {
             git branch: 'main', credentialsId: 'github_will', url: 'https://github.com/will89pinilla/appgate-calculator.git'
         }
     }
+
+    stage('Build image') {
+        steps {
+            script {
+                sh "./gradlew clean build"
+            }
+        }
+
+    }
     stage('Build image') {
         steps {
             script {
