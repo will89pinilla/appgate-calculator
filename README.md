@@ -57,7 +57,7 @@ Execute operation:
    ```
 
 ####5. Architecture
-![alt text](https://drive.google.com/file/d/1FxFtagoeJGzUR0T0cXSWEvxtsEgzXCBi/view?usp=sharing)
+![Alt text](architecture.png?raw=true "Title")
 
 ####6. Pipeline strategy
-![alt text](https://drive.google.com/file/d/1Tu_iwwAfKpzLOu9xfOW8X-IAMMpXhMLh/view?usp=sharing)
+![Alt text](cicd-strategy.png?raw=true "Title")
