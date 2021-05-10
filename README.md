@@ -55,3 +55,9 @@ Execute operation:
   --data '{"id" : 1, "operation" : "ADD"}' \
   http://localhost:8080/api/calculator/operate
    ```
+
+####5. Architecture
+![alt text](https://drive.google.com/file/d/1FxFtagoeJGzUR0T0cXSWEvxtsEgzXCBi/view?usp=sharing)
+
+####6. Pipeline strategy
+![alt text](https://drive.google.com/file/d/1Tu_iwwAfKpzLOu9xfOW8X-IAMMpXhMLh/view?usp=sharing)
