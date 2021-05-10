@@ -47,9 +47,15 @@ Add operand:
   http://localhost:8080/api/calculator/add
    ```
 
-Execute operation:
+Execute operation by type:
 
+ADD,
+SUB,
+MUL,
+DIV,
+POW;
    ```sh
+    
    curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"id" : 1, "operation" : "ADD"}' \
