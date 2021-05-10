@@ -1,7 +1,7 @@
 # Appgate Calculator
 
-This repo will show a demo of the Appgate test
-
+This repo will show a demo of the Appgate test, to solve this problem it was used 
+H2 database to manage the store and the stack of the operation to do for each env.
 
 
 <!-- GETTING STARTED -->
@@ -18,20 +18,20 @@ Total time demanded: 10 hours
 
 ### Installation
 
-####1. To review the code, please clone from repo:
+### 1. To review the code, please clone from repo:
    ```sh
    git clone https://github.com/will89pinilla/appgate-calculator.git   
    ```
 
-####2. To execute the test:
+### 2. To execute the test:
    ```sh
    ./gradlew build test   
    ```
-####3. Run container locally
+### 3. Run container locally
    ```sh
     docker run -p 8080:8080 wills89pinilla/appgate-calculator:latest
    ```
-####4. Consume services:
+### 4. Consume services:
  Create Environment:
 
    ```sh
@@ -56,8 +56,8 @@ Execute operation:
   http://localhost:8080/api/calculator/operate
    ```
 
-####5. Architecture
+### 5. Architecture
 ![Alt text](architecture.png?raw=true "Title")
 
-####6. Pipeline strategy
+### 6. Pipeline strategy
 ![Alt text](cicd-strategy.png?raw=true "Title")
