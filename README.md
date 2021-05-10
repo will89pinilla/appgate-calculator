@@ -61,6 +61,10 @@ POW;
   --data '{"id" : 1, "operation" : "ADD"}' \
   http://localhost:8080/api/calculator/operate
    ```
+To check the operantions made it, it can check in the next url the memory database, one table it is the Environment and the another one is the Operands:
+```sh
+http://localhost:8080/h2-console
+```
 
 ### 5. Architecture
 ![Alt text](architecture.png?raw=true "Title")
