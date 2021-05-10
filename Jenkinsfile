@@ -8,9 +8,16 @@ pipeline {
 
   stages {
     stage('Checkout Source') {
-      steps {
-        git branch: 'main', credentialsId: 'github_will', url: 'https://github.com/will89pinilla/appgate-calculator.git'
-      }
+        steps {
+            git branch: 'main', credentialsId: 'github_will', url: 'https://github.com/will89pinilla/appgate-calculator.git'
+        }
+    }
+    stage('Build image') {
+        steps {
+            script {
+                dockerImage = docker.build registry + ":v1.0.0"
+            }
+        }
     }
   }
 }
