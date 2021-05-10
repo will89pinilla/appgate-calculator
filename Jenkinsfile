@@ -16,9 +16,11 @@ pipeline {
 
     stage('Build project') {
         steps {
-            sh "./gradlew clean build"
+            sh 'chmod +x gradlew'
+            sh './gradlew build jar'
         }
     }
+
     stage('Build image') {
         steps {
             script {
@@ -26,5 +28,6 @@ pipeline {
             }
         }
     }
+
   }
 }
